@@ -105,5 +105,10 @@ int main (int argc, char **argv)
     printf("Saída do programa concorrente: %lf\n", produto_interno);
     printf("Saída do programa sequencial: %lf\n", resposta);
 
+    double variacao_relativa = (resposta - produto_interno) / resposta;
+    variacao_relativa *= (variacao_relativa < 0) ? -1 : 1; // Valor absoluto
+
+    printf("\nVariação relativa: %lf\n", variacao_relativa);
+
     return 0;
 }
