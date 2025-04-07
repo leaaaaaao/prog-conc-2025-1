@@ -20,12 +20,11 @@ Gera um arquivo binário no formato especificado e com o nome passado no parâme
 ### concorrente.c
 Recebe como parâmetros de linha de comando o número de threads e o nome do arquivo de entrada, que deve ter o formato especificado anteriormente.
 ```
-gcc -o concorrente concorrente.c -Wall -Wextra -std=c99
+gcc -o concorrente concorrente.c -lpthread -Wall -Wextra -std=c99
 ./concorrente <n_threads> <arquivo_de_entrada>
 ```
 
 Imprime o resultado obtido pelo programa sequencial (lido do arquivo), o resultado calculado de forma concorrente e a variação relativa.
 
 ## Resultado observado
-
-
+Nos testes, foi observada uma variação relativa de 0 (ou ao menos tão pequena que, por imprecisão da representação em ponto flutuante, é arredondada para 0). Assim, a precisão obtida é bem satisfatória, havendo pouca perda, o que é de se esperar utilizando variáveis de precisão dupla para armazenar as somas parciais.
